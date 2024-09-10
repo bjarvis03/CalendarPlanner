@@ -5,20 +5,20 @@
 }
 
 body{
-    padding: 2rem;
+    padding: 30px;
     font-family: 'Times New Roman';
     background-color: #d4d0d0b6;
 }
 
 .mainHeading{
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
 }
 
 .calendar{
     margin: auto;
-    width: 400px;
-    background: #ffff;
+    width: px;
+    background: #ffffff;
     border-radius: 15px;
 }
 
@@ -31,7 +31,7 @@ body{
 
 .calendar ul li{
     width: calc(100%/7);
-    margin-top: 25px;
+    margin-top: 15px;
     position: relative;
 }
 
@@ -39,9 +39,10 @@ body{
     width: 20px;
     height: 20px;
     position: relative;
-    top: 50%;
-    background: transparent;
+    left: 5px;
+    background: rgb(126, 207, 207);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #prev::before, #next::before{
@@ -53,6 +54,44 @@ body{
     left: 50%;
 }
 
-.daynames{
+#prev::before{
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+#next::before{
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.month{
+    content: '';
+    text-align: center;
+}
+
+.dayNames{
     font-weight: 600;
+}
+
+.dateNumbers li.today{
+    color: #ffffff;
+}
+
+.dateNumbers li.today::before{
+    content: '';
+    width:30px;
+    height:30px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background: #000;
+    border-radius:50%;
+    z-index: -1;
+}
+
+.days li.inactive{
+    color: #d4d0d0b6;
 }
